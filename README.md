@@ -95,7 +95,6 @@ Each verb has a registered `signature = input → output + side_effects`.
 
 * **Human-readable like DSL**, yet machine-stable and schema-driven.
 * **Language-neutral** bridge between planner, validator, and executor.
-* Designed to align with the **HYUNA–CHIMERA Unified Kernel v3.0** framework.
 * Enables deterministic AI behavior serialization for audit and replay.
 
 ---
@@ -137,12 +136,6 @@ cat examples/robot_cut.json | jq
 3. Add tests under `/tests/vectors/`
 4. Open PR with `spec-compliant` label
 
----
-
-## 🪶 Citation
-
-> Kim Hyuna (2025). *AILO v0.9 Specification — AI Language Object.*
-> Part of the HYUNA–CHIMERA Unified Kernel research series.
 
 ---
 
@@ -158,5 +151,3 @@ decide{ag:planner obj://ramen//bibimbap to:meal
 
 * `?` → 질문, `.` → 보고, `!` → 실행 (안전 규칙 필수)
 * JSON 형태로 완전한 라운드트립 보장
-* HYUNA–CHIMERA 커널과 호환되어 **감각–추론–행동 루프**에서 사용 가능
-t
