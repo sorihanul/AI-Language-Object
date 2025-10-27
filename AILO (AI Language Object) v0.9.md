@@ -507,4 +507,154 @@ act{ag:chef obj:ramen state:boil time:7m with:{pot:"A1"} risk:{overcook:0.2} rul
 
 ---
 
-**End of AILO v0.9**
+## 25. End Edition Declaration (v0.9-E)
+
+**Status:** Finalized implementation reference (operational)  
+**Philosophy:** No roadmap. No placeholders. Only finalized behavior.  
+**Scope:** Grammar · Transport · Validation · Security · Execution
+
+- Conformant encoders/decoders MUST produce identical canonical bytes and hash.
+    
+- All SRM computations MUST be reproducible within ±0.001.
+    
+
+---
+
+## 26. Unified Execution Stack
+
+|Layer|Function|Implementation|
+|---|---|---|
+|**AILO**|Intent grammar (`Verb{Slot*}Mood`)|Reference parser (`scp-core`)|
+|**SCP**|Serialization + compression|CJON/MessagePack canonical encoder|
+|**Validation**|SRM · rule · risk checks|Adaptive SRM engine v2|
+|**Security**|AES-256-GCM + ECDSA-P256 + Curve25519|Built-in crypto provider|
+|**Trace**|Immutable ledger (hash-chain)|Local JSONL + Merkle anchor|
+|**Runtime**|CLI + REST + gRPC|scp-runtime v0.9-E|
+
+---
+
+## 27. Deterministic Commit Rule (reinforced)
+
+- Any `!` action MUST include **at least one** of `{rule, risk, conf}`; else `E013`.
+    
+- Canonical slot order MUST be preserved for hashing and CJON emission.
+    
+- Choice `//…//` MUST be resolved **before** commit.
+    
+
+**Example**
+
+```ailo
+act{ag:arm1 obj:apple state:slice size:1cm
+    rule:safe risk:{cut:0.05} conf:0.96
+    with:{tool:knife}}!
+```
+
+---
+
+## 28. Canonical Packet (Lossless)
+
+```json
+{
+  "version":"SCP 0.9-E",
+  "sr":{
+    "verb":"act","mood":"!",
+    "slots":{
+      "ag":"arm1","obj":"apple",
+      "state":{"slice":true,"size":{"value":1,"unit":"cm"}},
+      "rule":"safe","risk":{"cut":0.05},"conf":0.96,
+      "with":{"tool":"knife"}
+    }
+  },
+  "meta":{"ts":"2025-10-27T10:00:00Z","profile":"secure"},
+  "hash":"sha3-256:b21f...",
+  "sig":"ecdsa-p256:MEYCIQ..."
+}
+```
+
+> Every conformant encoder must re-emit **identical JSON bytes and hash**.
+
+---
+
+## 29. Validation Rules (locked)
+
+|Code|Meaning|Enforcement|
+|---|---|---|
+|**E002**|Unknown verb|reject|
+|**E005**|Unit mismatch|reject|
+|**E013**|Unsafe commit|reject|
+|**E031**|SRM < 0.95|revalidate|
+|**E045**|Signature mismatch|reject|
+|**E048**|Schema fail|reject|
+
+- SRM via cosine similarity; **drift guard** Δ≤0.1.
+    
+
+---
+
+## 30. Security Stack (finalized)
+
+```
+Key exchange:  Curve25519 ECDH
+Symmetric:     AES-256-GCM
+Signature:     ECDSA-P256
+Hash:          SHA-3-256
+Key lifetime:  24 h or 1000 sessions
+```
+
+_All crypto operations are deterministic; any deviation invalidates the packet._
+
+---
+
+## 31. Execution Flow (real-time)
+
+```
+Input → Parse → Validate → Encrypt → Trace → Act → Log
+```
+
+**Sample runtime output**
+
+```json
+{
+  "ok":true,
+  "profile":"secure",
+  "srm":0.976,
+  "cr":4.6,
+  "rt_ms":84,
+  "trace_id":"trc-2025-10-27-A01",
+  "hash":"sha3-256:b21f..."
+}
+```
+
+---
+
+## 32. Compliance Profiles (frozen)
+
+|Profile|SRM ≥|Security|Trace|Mode|
+|---|---|---|---|---|
+|**strict**|0.95|AES-GCM|local|research|
+|**secure**|0.98|AES-GCM + ECDSA|full|deploy|
+|**sim**|n/a|none|mock|dry-run|
+
+Profiles are **immutable** in v0.9-E.
+
+---
+
+## 33. Conformance Checklist
+
+- ✅ Deterministic parser (same output hash on repeat)
+    
+- ✅ Validation passes all mandatory rules
+    
+- ✅ SRM reproducible within ±0.001
+    
+- ✅ AES-GCM + ECDSA verified
+    
+- ✅ Trace hash-chain intact
+    
+- ✅ p95 latency ≤ 120 ms
+    
+- ✅ Profiles `strict/secure` honored
+    
+
+---
