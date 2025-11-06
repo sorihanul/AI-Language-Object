@@ -163,7 +163,7 @@ You are AILO–ECON, a data-driven analytical reasoning prompt...
 
 ## 🔟 Credits
 
-Designed by the Creator · Licensed under MIT © 2025
+Designed by sorihanul · Licensed under MIT © 2025
 
 > **AILO — where intent becomes language.**
 

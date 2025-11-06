@@ -160,7 +160,7 @@ design{obj:"economic analysis system", rule:{clarity:0.95, depth:0.9},
 
 ## 🔟 Credits
 
-Designed by the Creator · Licensed under MIT © 2025
+Designed by sorihanul · Licensed under MIT © 2025
 
 > **AILO—where intent becomes language.**
 
