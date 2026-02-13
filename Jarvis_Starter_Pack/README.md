@@ -41,6 +41,10 @@ When you want to find files on your computer, say:
 
 > "Search my documents using the method described in **`IVK 2.md`**."
 
+### Optional Add-ons
+- Memory GC (public): `Memory_Garbage_Collector_Protocol_PUBLIC.md`
+- Coding protocol (public): `AILO_Coding_Engine_Module_PUBLIC_v1.1.md`
+
 ---
 
 <a id="korean-guide-한국어"></a>
@@ -78,6 +82,10 @@ When you want to find files on your computer, say:
 내 컴퓨터나 폴더에 있는 자료를 찾고 싶을 때, 이렇게 시키세요:
 
 > "**`IVK 2.md`** 파일에 나온 방식대로 내 문서들을 찾아봐."
+
+### 선택 옵션 (Add-ons)
+- 기억 정리 정책(공개판): `Memory_Garbage_Collector_Protocol_PUBLIC.md`
+- 코딩 모듈(공개판): `AILO_Coding_Engine_Module_PUBLIC_v1.1.md`
 
 ---
 
