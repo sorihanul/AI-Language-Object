@@ -44,6 +44,8 @@ When you want to find files on your computer, say:
 ### Optional Add-ons
 - Memory GC (public): `Memory_Garbage_Collector_Protocol_PUBLIC.md`
 - Coding protocol (public): `AILO_Coding_Engine_Module_PUBLIC_v1.1.md`
+- Agenda Flow (public): `AGENDA_Flow_Protocol_PUBLIC_v1.0.md`
+- Agenda template script: `AGENDA_Flow_Template.ps1`
 
 ---
 
@@ -86,6 +88,8 @@ When you want to find files on your computer, say:
 ### 선택 옵션 (Add-ons)
 - 기억 정리 정책(공개판): `Memory_Garbage_Collector_Protocol_PUBLIC.md`
 - 코딩 모듈(공개판): `AILO_Coding_Engine_Module_PUBLIC_v1.1.md`
+- 아젠다 단일파일 프로토콜(공개판): `AGENDA_Flow_Protocol_PUBLIC_v1.0.md`
+- 아젠다 템플릿 스크립트: `AGENDA_Flow_Template.ps1`
 
 ---
 
