@@ -41,6 +41,14 @@ When you want to find files on your computer, say:
 
 > "Search my documents using the method described in **`IVK 2.md`**."
 
+For compact index mode (recommended), use:
+
+> "Use **`IVK2_Improved/ivk2_improved.py`** to build/query local index."
+
+IVK note:
+- `IVK 2.md` = legacy concept/spec (reference)
+- `IVK2_Improved/` = recommended runnable implementation
+
 ### Optional Add-ons
 - Memory GC (public): `Memory_Garbage_Collector_Protocol_PUBLIC.md`
 - Coding protocol (public): `AILO_Coding_Engine_Module_PUBLIC_v1.1.md`
@@ -84,6 +92,14 @@ When you want to find files on your computer, say:
 내 컴퓨터나 폴더에 있는 자료를 찾고 싶을 때, 이렇게 시키세요:
 
 > "**`IVK 2.md`** 파일에 나온 방식대로 내 문서들을 찾아봐."
+
+인덱스 용량 최적화 버전(권장)은 다음을 사용하세요:
+
+> "**`IVK2_Improved/ivk2_improved.py`**로 로컬 인덱스를 만들고 검색해."
+
+IVK 안내:
+- `IVK 2.md` = 레거시 개념/명세(참고용)
+- `IVK2_Improved/` = 실제 실행 권장 구현
 
 ### 선택 옵션 (Add-ons)
 - 기억 정리 정책(공개판): `Memory_Garbage_Collector_Protocol_PUBLIC.md`
