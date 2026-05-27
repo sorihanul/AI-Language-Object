@@ -1,0 +1,39 @@
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local outputs and indexes
+Output/
+output/
+outputs/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# Packaged artifacts
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
+~$*
